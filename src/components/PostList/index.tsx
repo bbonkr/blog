@@ -6,15 +6,21 @@ import './postList.scss';
 export interface PostListProps {
     posts: any;
     onTagClick?: (tag: string) => void;
+    onCategoryClick?: (category: string) => void;
 }
 
-const PostList = (props: PostListProps) => {
-    const { posts } = props;
+const PostList: React.FC<PostListProps> = ({ posts, onTagClick, onCategoryClick }) => {
+    // const { posts } = props;
 
     const handleTagClick = (tag: string) => () => {
-        const { onTagClick } = props;
         if (onTagClick) {
             onTagClick(tag);
+        }
+    };
+
+    const handleCategoryClick = (category: string) => () => {
+        if (onCategoryClick) {
+            onCategoryClick(category);
         }
     };
 
@@ -22,9 +28,9 @@ const PostList = (props: PostListProps) => {
         const { node } = post;
         const { excerpt, fields, frontmatter } = node;
         const { slug } = fields;
-        const { date, title, tags } = frontmatter;
+        const { date, title, tags, categories } = frontmatter;
 
-        const mapTag = tags.map((tag: String) => {
+        const mapTag = tags.map((tag: string) => {
             if (tag === 'undefined') return;
 
             return (
@@ -36,9 +42,25 @@ const PostList = (props: PostListProps) => {
             );
         });
 
+        const mapCategories = categories.map((category: string, index: number) => {
+            if (category) {
+                return (
+                    <li key={`${slug}-${category}`} className="tag">
+                        <span onClick={handleCategoryClick(category)}>
+                            {index > 0 && <span> | </span>}
+                            <Link to={`/categories/#${category}`}>{category}</Link>
+                        </span>
+                    </li>
+                );
+            }
+        });
+
         return (
             <li key={slug} className="post">
                 <article>
+                    <div className="info">
+                        <ul className="tag-list">{mapCategories}</ul>
+                    </div>
                     <h2 className="title">
                         <Link to={slug}>{title}</Link>
                     </h2>

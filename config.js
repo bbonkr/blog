@@ -26,12 +26,12 @@ module.exports = {
 
   /** Post */
   enablePostOfContents: true,     // TableOfContents activation (Type of Value: Boolean. Not String)
-  disqusShortname: 'junhobaik',   // comments (Disqus sort-name)
+  disqusShortname: '',   // comments (Disqus sort-name)
   enableSocialShare: true,        // Social share icon activation (Type of Value: Boolean. Not String)
 
   /** Optional */
-  googleAnalytics: 'UA-103592668-4',    // Google Analytics TrackingID. ex.'UA-123456789-0'
-  googleAdsenseSlot: '5214956675',                // Google Adsense Slot. ex.'5214956675'
-  googleAdsenseClient: 'ca-pub-5001380215831339', // Google Adsense Client. ex.'ca-pub-5001380215831339'
+  googleAnalytics: '',    // Google Analytics TrackingID. ex.'UA-123456789-0'
+  googleAdsenseSlot: '',                // Google Adsense Slot. ex.'5214956675'
+  googleAdsenseClient: '', // Google Adsense Client. ex.'ca-pub-5001380215831339'
     // Please correct the adsense client number(ex.5001380215831339) in the './static/ads.txt' file.
 };

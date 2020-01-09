@@ -116,11 +116,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         };
 
         const rewriteNode = node => {
-            // 마크다운 파일 내 keywords 필드가 비어있을 시 오류가 나지 않도록 하기 위함
-            if (!node.frontmatter.keywords) {
-                node.frontmatter.keywords = [config.title, config.author];
-            }
-
             // 마크다운 파일 내 퍼블리쉬 필드가 비어있을 시 오류가 나지 않도록 하기 위함
             // development 환경일 시 published 필드가 모두 true이도록 하기 위함
             // if (
@@ -137,6 +132,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
             // 태그 필드가 배열이 아닌 문자열 하나일때 배열로 덮음
             else if (typeof node.frontmatter.tags === 'string') {
                 node.frontmatter.tags = [node.frontmatter.tags];
+            }
+
+            // 마크다운 파일 내 keywords 필드가 비어있을 시 오류가 나지 않도록 하기 위함
+            if (!node.frontmatter.keywords) {
+                node.frontmatter.keywords = [config.title, config.author, ...(node.frontmatter.tags || [])];
             }
 
             // markdown 내 date의 timezone 제거

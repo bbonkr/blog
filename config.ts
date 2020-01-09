@@ -48,7 +48,7 @@ export const config: Config = {
     status: '🌱 Start up',
     description: `bbon Blog`, // (* Required)
     author: `bbon`, // (* Required)
-    siteUrl: 'http://blog.bbon.kr', // (* Required)
+    siteUrl: 'http://dev.bbon.kr', // (* Required)
     // ex.'https://junhobaik.github.io'
     // ex.'https://junhobaik.github.io/' << X, Do not enter "/" at the end.
 

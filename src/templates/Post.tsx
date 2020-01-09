@@ -26,18 +26,19 @@ import Toc from '../components/Toc';
 import SEO from '../components/seo';
 import './post.scss';
 import 'katex/dist/katex.min.css';
-const config = require('../../config');
+// const config = require('../../config');
+import { config } from '../../config';
 
-export interface postProps {
+export interface PostProps {
     data: any;
     pageContext: any;
 }
 
-const Post = (props: postProps) => {
+const Post = (props: PostProps) => {
     const { data, pageContext } = props;
     const { markdownRemark } = data; // data.markdownRemark holds your post data
     const { frontmatter, html, tableOfContents, fields, excerpt } = markdownRemark;
-    const { title, date, tags, keywords } = frontmatter;
+    const { title, date, tags, keywords, categories } = frontmatter;
     const { slug } = fields;
     const { series } = pageContext;
     const [yList, setYList] = useState();
@@ -57,7 +58,7 @@ const Post = (props: postProps) => {
 
         setYList(foo);
 
-        return () => {};
+        // return () => {};
     }, []);
 
     useEffect(() => {
@@ -90,6 +91,15 @@ const Post = (props: postProps) => {
         return (
             <li key={tag} className="blog-post-tag">
                 <Link to={`/tags/#${tag}`}>{`#${tag}`}</Link>
+            </li>
+        );
+    });
+
+    const mapCategories = categories.map((category: string, index: number) => {
+        return (
+            <li key={category} className="blog-post-tag">
+                {index > 0 && <span> | </span>}
+                <Link to={`/categories/#${category}`}>{`${category}`}</Link>
             </li>
         );
     });
@@ -135,6 +145,9 @@ const Post = (props: postProps) => {
             <Layout>
                 <div className="blog-post-container">
                     <div className="blog-post">
+                        <div className="blog-post-info">
+                            <ul className="blog-post-tag-list">{mapCategories}</ul>
+                        </div>
                         <h1 className="blog-post-title">{title}</h1>
 
                         <div className="blog-post-info">
@@ -227,15 +240,17 @@ const Post = (props: postProps) => {
                         </>
                     ) : (
                         <>
-                            <aside className="ad">
-                                <AdSense.Google
-                                    client={config.googleAdsenseClient || 'ca-pub-5001380215831339'}
-                                    slot={config.googleAdsenseSlot || '5214956675'}
-                                    style={{ display: 'block' }}
-                                    format="auto"
-                                    responsive="true"
-                                />
-                            </aside>
+                            {config.googleAdsenseClient && config.googleAdsenseSlot && (
+                                <aside className="ad">
+                                    <AdSense.Google
+                                        client={config.googleAdsenseClient || 'ca-pub-5001380215831339'}
+                                        slot={config.googleAdsenseSlot || '5214956675'}
+                                        style={{ display: 'block' }}
+                                        format="auto"
+                                        responsive="true"
+                                    />
+                                </aside>
+                            )}
 
                             {isDisqus ? (
                                 <div className="comments">
@@ -263,8 +278,9 @@ export const pageQuery = graphql`
             }
             frontmatter {
                 title
-                date(formatString: "MMM DD, YYYY")
+                date(formatString: "YYYY-MM-DD")
                 tags
+                categories
                 keywords
             }
         }

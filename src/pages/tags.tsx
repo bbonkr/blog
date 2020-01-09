@@ -7,6 +7,11 @@ import SEO from '../components/seo';
 import './styles/tags.scss';
 import PostList from '../components/PostList';
 
+interface GroupItem {
+    fieldValue: string;
+    totalCount: number;
+}
+
 export interface TagsPageProps {
     data: any;
 }
@@ -16,12 +21,7 @@ const Tags = (props: TagsPageProps) => {
     const [largeCount, setLargeCount] = useState(0);
     const [targetTag, setTargetTag] = useState('undefined');
 
-    interface groupItem {
-        fieldValue: string;
-        totalCount: number;
-    }
-
-    group.sort((a: groupItem, b: groupItem) => {
+    group.sort((a: GroupItem, b: GroupItem) => {
         const x = a.fieldValue.toLocaleLowerCase();
         const y = b.fieldValue.toLocaleLowerCase();
 
@@ -30,7 +30,7 @@ const Tags = (props: TagsPageProps) => {
         return 0;
     });
 
-    const tagList = group.map((g: groupItem) => {
+    const tagList = group.map((g: GroupItem) => {
         const getFontSize = () => {
             let fontSize = Math.round(50 / (largeCount / g.totalCount)).toString();
             if (fontSize.length <= 1) fontSize = `0${fontSize}`;
@@ -62,11 +62,11 @@ const Tags = (props: TagsPageProps) => {
     });
 
     const getPostList = () => {
-        if (group.filter((g: groupItem) => g.fieldValue === targetTag).length) {
-            return group.filter((g: groupItem) => g.fieldValue === targetTag)[0].edges;
+        if (group.filter((g: GroupItem) => g.fieldValue === targetTag).length) {
+            return group.filter((g: GroupItem) => g.fieldValue === targetTag)[0].edges;
         }
-        if (group.filter((g: groupItem) => g.fieldValue === 'undefined').length) {
-            return group.filter((g: groupItem) => g.fieldValue === 'undefined')[0].edges;
+        if (group.filter((g: GroupItem) => g.fieldValue === 'undefined').length) {
+            return group.filter((g: GroupItem) => g.fieldValue === 'undefined')[0].edges;
         }
         return [];
     };
@@ -78,12 +78,12 @@ const Tags = (props: TagsPageProps) => {
         }
         setLargeCount(large);
 
-        return () => {};
+        // return () => {};
     }, [group]);
 
     useEffect(() => {
         if (location.hash) setTargetTag(location.hash.split('#')[1]);
-        return () => {};
+        // return () => {};
     }, []);
 
     return (
@@ -113,9 +113,11 @@ export const pageQuery = graphql`
                             slug
                         }
                         frontmatter {
-                            date(formatString: "MMM DD, YYYY")
+                            date(formatString: "YYYY-MM-DD")
                             title
                             tags
+                            categories
+                            keywords
                         }
                     }
                 }

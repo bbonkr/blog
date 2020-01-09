@@ -15,3 +15,5 @@
 2020-01-05
 
 태그 목록에서 게시물 목록의 태그를 클릭했을 때, 위쪽의 태그목록이 변경되도록 합니다.
+
+[gatsby-remark-embedder](https://www.gatsbyjs.org/packages/gatsby-remark-embedder/?=embeded) 추가합니다.

@@ -63,7 +63,7 @@ export const config: Config = {
     company: '',
     location: 'Korea',
     email: 'bbon@bbon.kr',
-    website: 'http://blog.bbon.kr', // ex.'https://junhobaik.github.io'
+    website: 'http://dev.bbon.kr', // ex.'https://junhobaik.github.io'
     linkedin: 'https://www.linkedin.com/in/bbonkr', // ex.'https://www.linkedin.com/in/junho-baik-16073a19ab'
     facebook: 'https://www.facebook.com/bbonkr', // ex.'https://www.facebook.com/zuck' or 'https://www.facebook.com/profile.php?id=000000000000000'
     instagram: 'https://www.instagram.com/bbonkr', // ex.'https://www.instagram.com/junhobaik'
@@ -76,7 +76,7 @@ export const config: Config = {
 
     /** Optional */
     googleAnalytics: 'UA-50182765-2', // Google Analytics TrackingID. ex.'UA-123456789-0'
-    googleAdsenseSlot: '', // Google Adsense Slot. ex.'5214956675'
+    googleAdsenseSlot: '9243570675', // Google Adsense Slot. ex.'5214956675'
     googleAdsenseClient: 'ca-pub-5956253181701205', // Google Adsense Client. ex.'ca-pub-5001380215831339'
     // Please correct the adsense client number(ex.5001380215831339) in the './static/ads.txt' file.
 };

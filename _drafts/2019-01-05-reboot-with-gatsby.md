@@ -5,11 +5,9 @@ categories:
     - HowTo
 tags:
     - gatsby
-    - wordpress
     - blog
 keywords:
     - gatsby
-    - wordpress
     - blog
 ---
 

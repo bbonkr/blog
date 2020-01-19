@@ -7,10 +7,12 @@ tags:
     - react-native
     - expo
     - typescript
+    - eslint
 keywords:
     - react-native
     - expo
     - typescript
+    - eslint
 ---
 
 ## 패키지 설치
@@ -62,7 +64,7 @@ $ yarn add eslint prettier eslint-plugin-react eslint-plugin-import eslint-plugi
 }
 ```
 
-## npm scripts
+### npm scripts
 
 ```json
 "scripts" : {

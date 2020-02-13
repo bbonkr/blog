@@ -14,6 +14,18 @@
 
 [@junhobaik](https://github.com/junhobaik) 님께서 공개하신 [**Borderless**](<https://github.com/junhobaik/junhobaik.github.io/wiki/Document-(Borderless)>)에서 시작합니다.
 
+## 게시
+
+빌드를 확인하고, master 브랜치로 병합하면 네트리파이에서 빌드가 시작됩니다.
+
+```
+yarn build
+```
+
+> yarn deploy 를 사용하지 마세요.
+>
+> github pages 를 사용하지 않습니다.
+
 ## 작업
 
 ### 아이콘

@@ -85,7 +85,7 @@
     "tsc": "tsc",
     "type-check": "tsc --noEmit",
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
-    "deploy": "rm -rf .cache/ && rm -rf public/ && gatsby build && gh-pages -b master -d public"
+    "deploy": "#사용금지!! rm -rf .cache/ && rm -rf public/ && gatsby build && gh-pages -b master -d public"
   },
   "repository": {
     "type": "git",

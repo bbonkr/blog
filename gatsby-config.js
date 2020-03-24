@@ -8,11 +8,48 @@ const gatsbyConfig = {
 
     plugins: [
         {
-            resolve: `gatsby-plugin-generate-typings`,
+            resolve: `gatsby-plugin-graphql-codegen`,
             options: {
-                dest: `./@types/graphql-types.d.ts`,
+                fileName: `@types/graphql-types.d.ts`,
+                documentPaths: ['./src/**/*.{ts,tsx}', './node_modules/gatsby-*/**/*.js'],
+                codegenDelay: 200,
+                pluckConfig: {
+                    // this is the default config
+                    globalGqlIdentifierName: 'graphql',
+                    modules: [{ name: 'gatsby', identifier: 'graphql' }],
+                },
+                //   additionalSchemas: [
+                //     {
+                //       key: 'example',
+                //       fileName: 'graphql-types-example.ts',
+                //       schema: 'https://example.com/graphql',
+                //       pluckConfig: {
+                //         // config to ensure only queries using the `gql` tag are used for this schema
+                //         globalGqlIdentifierName: 'gql',
+                //         modules: [
+                //           {
+                //             name: 'graphql-tag',
+                //             identifier: 'gql',
+                //           },
+                //         ],
+                //       },
+                //     }
+                //   ],
             },
         },
+        // {
+        //     resolve: `gatsby-plugin-generate-typings`,
+        //     options: {
+        //         dest: `./@types/graphql-types.d.ts`,
+        //     },
+        //     documentPaths: ['./src/**/*.{ts,tsx}', './node_modules/gatsby-*/**/*.js'],
+        //     codegenDelay: 200,
+        //     pluckConfig: {
+        //         // this is the default config
+        //         globalGqlIdentifierName: 'graphql',
+        //         modules: [{ name: 'gatsby', identifier: 'graphql' }],
+        //     },
+        // },
         // `gatsby-plugin-typegen`,
         {
             resolve: `gatsby-plugin-google-analytics`,

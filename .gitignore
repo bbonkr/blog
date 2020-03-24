@@ -9,3 +9,7 @@ yarn-error.log
 # Build directory
 .DS_Store
 public/
+
+# 개발환경과 게시 환경이 다름
+package-lock.json
+yarn.lock

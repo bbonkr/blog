@@ -30,7 +30,7 @@ const PostList: React.FC<PostListProps> = ({ posts, onTagClick, onCategoryClick 
         const { slug } = fields;
         const { date, title, tags, categories } = frontmatter;
 
-        const mapTag = tags.map((tag: string) => {
+        const mapTag = (tags || []).map((tag: string) => {
             if (tag === 'undefined') return;
 
             return (
@@ -42,7 +42,7 @@ const PostList: React.FC<PostListProps> = ({ posts, onTagClick, onCategoryClick 
             );
         });
 
-        const mapCategories = categories.map((category: string, index: number) => {
+        const mapCategories = (categories || []).map((category: string, index: number) => {
             if (category) {
                 return (
                     <li key={`${slug}-${category}`} className="tag">

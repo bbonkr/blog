@@ -41,7 +41,7 @@ const Post = (props: PostProps) => {
     const { title, date, tags, keywords, categories } = frontmatter;
     const { slug } = fields;
     const { series } = pageContext;
-    const [yList, setYList] = useState();
+    const [yList, setYList] = useState<number[]>([]);
     const [isInsideToc, setIsInsideToc] = useState(false);
 
     const isTableOfContents = config.enablePostOfContents && tableOfContents !== '';
@@ -87,7 +87,7 @@ const Post = (props: PostProps) => {
         };
     }, [yList]);
 
-    const mapTags = tags.map((tag: string) => {
+    const mapTags = (tags || []).map((tag: string) => {
         return (
             <li key={tag} className="blog-post-tag">
                 <Link to={`/tags/#${tag}`}>{`#${tag}`}</Link>
@@ -95,7 +95,7 @@ const Post = (props: PostProps) => {
         );
     });
 
-    const mapCategories = categories.map((category: string, index: number) => {
+    const mapCategories = (categories || []).map((category: string, index: number) => {
         return (
             <li key={category} className="blog-post-tag">
                 {index > 0 && <span> | </span>}
@@ -104,7 +104,7 @@ const Post = (props: PostProps) => {
         );
     });
 
-    const mapSeries = series.map((s: any) => {
+    const mapSeries = (series || []).map((s: any) => {
         return (
             <li key={`${s.slug}-series-${s.num}`} className={`series-item ${slug === s.slug ? 'current-series' : ''}`}>
                 <Link to={s.slug}>

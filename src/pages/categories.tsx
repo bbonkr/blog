@@ -107,7 +107,7 @@ const Categories: React.FC<CategoriesPageProps> = ({ data }) => {
 
 export const pageQuery = graphql`
     query {
-        allMarkdownRemark(sort: { fields: frontmatter___date, order: ASC }) {
+        allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
             group(field: frontmatter___categories) {
                 fieldValue
                 totalCount

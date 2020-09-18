@@ -2,7 +2,7 @@
 title: SPA 에서 파일 다운로드
 date: 2020-09-07
 categories:
-    - HwoTo
+    - HowTo
 tags:
     - "code snippet"
     - npm

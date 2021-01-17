@@ -2,7 +2,7 @@
 title: 나의 NPM 패키지 만들기
 date: 2020-04-25
 categories:
-    - HwoTo
+    - HowTo
 tags:
     - npm
     - typescript

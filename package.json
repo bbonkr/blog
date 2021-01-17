@@ -4,6 +4,7 @@
   "description": "소프트웨어 개발 관련 블로그",
   "version": "1.0.0",
   "author": "구본철 bbonkr bbon@bbon.kr",
+  "homepage": "https://dev.bbon.kr",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-brands-svg-icons": "^5.15.2",
@@ -24,9 +25,15 @@
     "gatsby-plugin-sharp": "^2.12.2",
     "gatsby-plugin-sitemap": "^2.10.0",
     "gatsby-plugin-tslint": "0.0.2",
+<<<<<<< HEAD
     "gatsby-plugin-typescript": "^2.10.0",
     "gatsby-plugin-typography": "^2.10.0",
     "gatsby-remark-autolink-headers": "^2.9.0",
+=======
+    "gatsby-plugin-typescript": "^2.4.20",
+    "gatsby-plugin-typography": "^2.5.11",
+    "gatsby-remark-autolink-headers": "^2.3.13",
+>>>>>>> 892c952447903f1d050f5e96e7f25e26aa2ee79c
     "gatsby-remark-embedder": "^4.1.0",
     "gatsby-remark-emojis": "^0.4.2",
     "gatsby-remark-images": "^3.9.0",
@@ -37,9 +44,15 @@
     "gatsby-transformer-sharp": "^2.10.1",
     "katex": "^0.12.0",
     "mobile-detect": "^1.4.4",
+<<<<<<< HEAD
     "node-sass": "^5.0.0",
     "prism-themes": "^1.5.0",
     "prismjs": "^1.23.0",
+=======
+    "node-sass": "4",
+    "prism-themes": "^1.3.0",
+    "prismjs": "^1.21.0",
+>>>>>>> 892c952447903f1d050f5e96e7f25e26aa2ee79c
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-adsense": "^0.1.0",
@@ -52,19 +65,32 @@
     "typography": "^0.16.19"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "@types/node": "^14.14.21",
+=======
+    "@types/node": "^14.11.1",
+>>>>>>> 892c952447903f1d050f5e96e7f25e26aa2ee79c
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-helmet": "^6.1.0",
     "@types/react-redux": "^7.1.15",
     "@types/react-share": "^3.0.3",
     "@types/typography": "^0.16.3",
+<<<<<<< HEAD
     "@typescript-eslint/eslint-plugin": "^4.13.0",
     "@typescript-eslint/parser": "^4.13.0",
     "eslint": "^7.18.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.22.0",
+=======
+    "@typescript-eslint/eslint-plugin": "^4.1.1",
+    "@typescript-eslint/parser": "^4.1.1",
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+>>>>>>> 892c952447903f1d050f5e96e7f25e26aa2ee79c
     "gh-pages": "^3.1.0",
     "prettier": "^2.2.1",
     "ts-node": "^9.1.1",
@@ -89,9 +115,16 @@
   },
   "repository": {
     "type": "git",
+<<<<<<< HEAD
     "url": "https://github.com/bbonkr/blog"
   },
   "bugs": {
+=======
+    "url": "https://github.com/bbonkr/blog.git"
+  },
+  "bugs": {
+    "email": "bbon@bbon.kr",
+>>>>>>> 892c952447903f1d050f5e96e7f25e26aa2ee79c
     "url": "https://github.com/bbonkr/blog/issues"
   }
 }

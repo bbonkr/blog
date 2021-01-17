@@ -2,18 +2,18 @@
 title: WSL 2 on Windows 10 build 2004
 date: 2020-06-01
 categories:
-    - HwoTo
+    - HowTo
 tags:
-    - "windows 10"
+    - 'windows 10'
     - wsl
     - linux
-    - "windows subsystem for linux"
+    - 'windows subsystem for linux'
     - microsoft
 keywords:
-    - "windows 10"
+    - 'windows 10'
     - wsl
     - linux
-    - "windows subsystem for linux"
+    - 'windows subsystem for linux'
     - microsoft
 ---
 
@@ -144,5 +144,5 @@ PS> bash
 
 ## 참조
 
-- [Linux용 Windows 하위 시스템 설명서](https://docs.microsoft.com/ko-kr/windows/wsl/)
-- [WSL 2 Linux 커널 업데이트](https://docs.microsoft.com/ko-kr/windows/wsl/wsl2-kernel)
+-   [Linux용 Windows 하위 시스템 설명서](https://docs.microsoft.com/ko-kr/windows/wsl/)
+-   [WSL 2 Linux 커널 업데이트](https://docs.microsoft.com/ko-kr/windows/wsl/wsl2-kernel)

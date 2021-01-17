@@ -28,12 +28,15 @@ export type Scalars = {
 
 
 
+<<<<<<< HEAD
 export type AvifOptions = {
   quality?: Maybe<Scalars['Int']>;
   lossless?: Maybe<Scalars['Boolean']>;
   speed?: Maybe<Scalars['Int']>;
 };
 
+=======
+>>>>>>> 892c952447903f1d050f5e96e7f25e26aa2ee79c
 export type BlurredOptions = {
   /** Width of the generated low-res preview. Default is 20px */
   width?: Maybe<Scalars['Int']>;
@@ -1039,6 +1042,17 @@ export type ImagePlaceholder =
   | 'BLURRED'
   | 'NONE';
 
+export type ImageLayout = 
+  | 'FIXED'
+  | 'FLUID'
+  | 'CONSTRAINED';
+
+export type ImagePlaceholder = 
+  | 'DOMINANT_COLOR'
+  | 'TRACED_SVG'
+  | 'BLURRED'
+  | 'NONE';
+
 export type ImageSharp = Node & {
   fixed?: Maybe<ImageSharpFixed>;
   /** @deprecated Resolutions was deprecated in Gatsby v2. It's been renamed to "fixed" https://example.com/write-docs-and-fix-this-example-link */
@@ -1168,7 +1182,10 @@ export type ImageSharpGatsbyImageDataArgs = {
   jpgOptions?: Maybe<JpgOptions>;
   pngOptions?: Maybe<PngOptions>;
   webpOptions?: Maybe<WebPOptions>;
+<<<<<<< HEAD
   avifOptions?: Maybe<AvifOptions>;
+=======
+>>>>>>> 892c952447903f1d050f5e96e7f25e26aa2ee79c
   transformOptions?: Maybe<TransformOptions>;
   background?: Maybe<Scalars['String']>;
 };
@@ -2759,6 +2776,15 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___cache_busting_mode'
   | 'pluginCreator___pluginOptions___crossOrigin'
   | 'pluginCreator___pluginOptions___cacheDigest'
+  | 'pluginCreator___pluginOptions___indentedSyntax'
+  | 'pluginCreator___pluginOptions___indentType'
+  | 'pluginCreator___pluginOptions___indentWidth'
+  | 'pluginCreator___pluginOptions___linefeed'
+  | 'pluginCreator___pluginOptions___omitSourceMapUrl'
+  | 'pluginCreator___pluginOptions___precision'
+  | 'pluginCreator___pluginOptions___sourceComments'
+  | 'pluginCreator___pluginOptions___sourceMapContents'
+  | 'pluginCreator___pluginOptions___sourceMapEmbed'
   | 'pluginCreator___pluginOptions___pathToConfigModule'
   | 'pluginCreator___pluginOptions___output'
   | 'pluginCreator___pluginOptions___createLinkInHead'
@@ -3024,6 +3050,15 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___cache_busting_mode'
   | 'pluginOptions___crossOrigin'
   | 'pluginOptions___cacheDigest'
+  | 'pluginOptions___indentedSyntax'
+  | 'pluginOptions___indentType'
+  | 'pluginOptions___indentWidth'
+  | 'pluginOptions___linefeed'
+  | 'pluginOptions___omitSourceMapUrl'
+  | 'pluginOptions___precision'
+  | 'pluginOptions___sourceComments'
+  | 'pluginOptions___sourceMapContents'
+  | 'pluginOptions___sourceMapEmbed'
   | 'pluginOptions___pathToConfigModule'
   | 'pluginOptions___output'
   | 'pluginOptions___createLinkInHead'
@@ -3192,6 +3227,15 @@ export type SitePluginPluginOptions = {
   cache_busting_mode?: Maybe<Scalars['String']>;
   crossOrigin?: Maybe<Scalars['String']>;
   cacheDigest?: Maybe<Scalars['String']>;
+  indentedSyntax?: Maybe<Scalars['Boolean']>;
+  indentType?: Maybe<Scalars['String']>;
+  indentWidth?: Maybe<Scalars['Int']>;
+  linefeed?: Maybe<Scalars['String']>;
+  omitSourceMapUrl?: Maybe<Scalars['Boolean']>;
+  precision?: Maybe<Scalars['Int']>;
+  sourceComments?: Maybe<Scalars['Boolean']>;
+  sourceMapContents?: Maybe<Scalars['Boolean']>;
+  sourceMapEmbed?: Maybe<Scalars['Boolean']>;
   pathToConfigModule?: Maybe<Scalars['String']>;
   output?: Maybe<Scalars['String']>;
   createLinkInHead?: Maybe<Scalars['Boolean']>;
@@ -3262,6 +3306,15 @@ export type SitePluginPluginOptionsFilterInput = {
   cache_busting_mode?: Maybe<StringQueryOperatorInput>;
   crossOrigin?: Maybe<StringQueryOperatorInput>;
   cacheDigest?: Maybe<StringQueryOperatorInput>;
+  indentedSyntax?: Maybe<BooleanQueryOperatorInput>;
+  indentType?: Maybe<StringQueryOperatorInput>;
+  indentWidth?: Maybe<IntQueryOperatorInput>;
+  linefeed?: Maybe<StringQueryOperatorInput>;
+  omitSourceMapUrl?: Maybe<BooleanQueryOperatorInput>;
+  precision?: Maybe<IntQueryOperatorInput>;
+  sourceComments?: Maybe<BooleanQueryOperatorInput>;
+  sourceMapContents?: Maybe<BooleanQueryOperatorInput>;
+  sourceMapEmbed?: Maybe<BooleanQueryOperatorInput>;
   pathToConfigModule?: Maybe<StringQueryOperatorInput>;
   output?: Maybe<StringQueryOperatorInput>;
   createLinkInHead?: Maybe<BooleanQueryOperatorInput>;

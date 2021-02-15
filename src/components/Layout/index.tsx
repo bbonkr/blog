@@ -47,7 +47,7 @@ const Layout: React.FC = ({ children }) => {
         <>
             <Helmet>
                 <link rel="shortcut icon" href="/favicon.ico" />
-                <link rel="icon" href="/icon.pngg" />
+                <link rel="icon" href="/icon.png" />
                 <link href={`https://fonts.googleapis.com/css?family=${googleFont}`} rel="stylesheet" />
                 <style>{FaDom.css()}</style>
             </Helmet>

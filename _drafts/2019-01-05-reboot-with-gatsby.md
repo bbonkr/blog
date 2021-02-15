@@ -2,13 +2,15 @@
 title: 개츠비로 블로그 추가
 date: 2020-01-05
 categories:
-    - HowTo
+    - Log
 tags:
     - gatsby
     - blog
+    - log
 keywords:
     - gatsby
     - blog
+    - log
 ---
 
 개츠비로 블로그를 추가하기 위한 사전 작업을 진행합니다.
@@ -138,6 +140,6 @@ https://www.facebook.com/photo.php?fbid=2895172780514666&set=a.344637782234858&t
 
 ### Instagram
 
-https://www.instagram.com/p/B3lws7IAUr-/?utm_source=ig_web_button_share_sheet
+https://www.instagram.com/p/B3lws7IAUr-/
 
 ➡️ Does not work

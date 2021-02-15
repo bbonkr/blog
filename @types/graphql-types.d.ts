@@ -1030,7 +1030,7 @@ export type ImageFormat =
 
 export type ImageLayout = 
   | 'FIXED'
-  | 'FLUID'
+  | 'FULL_WIDTH'
   | 'CONSTRAINED';
 
 export type ImagePlaceholder = 
@@ -1154,15 +1154,15 @@ export type ImageSharpSizesArgs = {
 
 export type ImageSharpGatsbyImageDataArgs = {
   layout?: Maybe<ImageLayout>;
-  maxWidth?: Maybe<Scalars['Int']>;
-  maxHeight?: Maybe<Scalars['Int']>;
   width?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
+  aspectRatio?: Maybe<Scalars['Float']>;
   placeholder?: Maybe<ImagePlaceholder>;
   blurredOptions?: Maybe<BlurredOptions>;
   tracedSVGOptions?: Maybe<Potrace>;
   formats?: Maybe<Array<Maybe<ImageFormat>>>;
   outputPixelDensities?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  breakpoints?: Maybe<Array<Maybe<Scalars['Int']>>>;
   sizes?: Maybe<Scalars['String']>;
   quality?: Maybe<Scalars['Int']>;
   jpgOptions?: Maybe<JpgOptions>;
@@ -1170,7 +1170,7 @@ export type ImageSharpGatsbyImageDataArgs = {
   webpOptions?: Maybe<WebPOptions>;
   avifOptions?: Maybe<AvifOptions>;
   transformOptions?: Maybe<TransformOptions>;
-  background?: Maybe<Scalars['String']>;
+  backgroundColor?: Maybe<Scalars['String']>;
 };
 
 
@@ -2058,6 +2058,8 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2196,6 +2198,8 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
+  port?: Maybe<Scalars['Int']>;
+  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -2399,6 +2403,8 @@ export type SiteFieldsEnum =
   | 'siteMetadata___description'
   | 'siteMetadata___author'
   | 'siteMetadata___siteUrl'
+  | 'port'
+  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -2491,6 +2497,8 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2719,7 +2727,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___allExtensions'
   | 'pluginCreator___pluginOptions___name'
   | 'pluginCreator___pluginOptions___path'
-  | 'pluginCreator___pluginOptions___tableOfContents___maxDepth'
   | 'pluginCreator___pluginOptions___maxWidth'
   | 'pluginCreator___pluginOptions___classPrefix'
   | 'pluginCreator___pluginOptions___showLineNumbers'
@@ -2765,6 +2772,7 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___policy___userAgent'
   | 'pluginCreator___pluginOptions___policy___allow'
   | 'pluginCreator___pluginOptions___pathCheck'
+  | 'pluginCreator___pluginOptions___tableOfContents___maxDepth'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
   | 'pluginCreator___ssrAPIs'
@@ -2984,7 +2992,6 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___allExtensions'
   | 'pluginOptions___name'
   | 'pluginOptions___path'
-  | 'pluginOptions___tableOfContents___maxDepth'
   | 'pluginOptions___maxWidth'
   | 'pluginOptions___classPrefix'
   | 'pluginOptions___showLineNumbers'
@@ -3030,6 +3037,8 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___policy___userAgent'
   | 'pluginOptions___policy___allow'
   | 'pluginOptions___pathCheck'
+  | 'pluginOptions___tableOfContents___maxDepth'
+  | 'pluginOptions___services___Instagram___accessToken'
   | 'nodeAPIs'
   | 'browserAPIs'
   | 'ssrAPIs'
@@ -3157,7 +3166,6 @@ export type SitePluginPluginOptions = {
   allExtensions?: Maybe<Scalars['Boolean']>;
   name?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
-  tableOfContents?: Maybe<SitePluginPluginOptionsTableOfContents>;
   maxWidth?: Maybe<Scalars['Int']>;
   classPrefix?: Maybe<Scalars['String']>;
   showLineNumbers?: Maybe<Scalars['Boolean']>;
@@ -3193,6 +3201,8 @@ export type SitePluginPluginOptions = {
   sitemap?: Maybe<Scalars['String']>;
   policy?: Maybe<Array<Maybe<SitePluginPluginOptionsPolicy>>>;
   pathCheck?: Maybe<Scalars['Boolean']>;
+  tableOfContents?: Maybe<SitePluginPluginOptionsTableOfContents>;
+  services?: Maybe<SitePluginPluginOptionsServices>;
 };
 
 export type SitePluginPluginOptionsFeeds = {
@@ -3227,7 +3237,6 @@ export type SitePluginPluginOptionsFilterInput = {
   allExtensions?: Maybe<BooleanQueryOperatorInput>;
   name?: Maybe<StringQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
-  tableOfContents?: Maybe<SitePluginPluginOptionsTableOfContentsFilterInput>;
   maxWidth?: Maybe<IntQueryOperatorInput>;
   classPrefix?: Maybe<StringQueryOperatorInput>;
   showLineNumbers?: Maybe<BooleanQueryOperatorInput>;
@@ -3263,6 +3272,8 @@ export type SitePluginPluginOptionsFilterInput = {
   sitemap?: Maybe<StringQueryOperatorInput>;
   policy?: Maybe<SitePluginPluginOptionsPolicyFilterListInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
+  tableOfContents?: Maybe<SitePluginPluginOptionsTableOfContentsFilterInput>;
+  services?: Maybe<SitePluginPluginOptionsServicesFilterInput>;
 };
 
 export type SitePluginPluginOptionsPluckConfig = {
@@ -3326,6 +3337,7 @@ export type SitePluginPluginOptionsPluginsPluginOptions = {
   class?: Maybe<Scalars['String']>;
   size?: Maybe<Scalars['Int']>;
   styles?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsStyles>;
+  services?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsServices>;
 };
 
 export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
@@ -3337,6 +3349,23 @@ export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
   class?: Maybe<StringQueryOperatorInput>;
   size?: Maybe<IntQueryOperatorInput>;
   styles?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsStylesFilterInput>;
+  services?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsServicesFilterInput>;
+};
+
+export type SitePluginPluginOptionsPluginsPluginOptionsServices = {
+  Instagram?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsServicesInstagram>;
+};
+
+export type SitePluginPluginOptionsPluginsPluginOptionsServicesFilterInput = {
+  Instagram?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsServicesInstagramFilterInput>;
+};
+
+export type SitePluginPluginOptionsPluginsPluginOptionsServicesInstagram = {
+  accessToken?: Maybe<Scalars['String']>;
+};
+
+export type SitePluginPluginOptionsPluginsPluginOptionsServicesInstagramFilterInput = {
+  accessToken?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginPluginOptionsPluginsPluginOptionsStyles = {
@@ -3369,6 +3398,22 @@ export type SitePluginPluginOptionsPolicyFilterInput = {
 
 export type SitePluginPluginOptionsPolicyFilterListInput = {
   elemMatch?: Maybe<SitePluginPluginOptionsPolicyFilterInput>;
+};
+
+export type SitePluginPluginOptionsServices = {
+  Instagram?: Maybe<SitePluginPluginOptionsServicesInstagram>;
+};
+
+export type SitePluginPluginOptionsServicesFilterInput = {
+  Instagram?: Maybe<SitePluginPluginOptionsServicesInstagramFilterInput>;
+};
+
+export type SitePluginPluginOptionsServicesInstagram = {
+  accessToken?: Maybe<Scalars['String']>;
+};
+
+export type SitePluginPluginOptionsServicesInstagramFilterInput = {
+  accessToken?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginPluginOptionsStyles = {

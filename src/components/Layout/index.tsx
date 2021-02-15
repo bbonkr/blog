@@ -5,11 +5,10 @@ import Helmet from 'react-helmet';
 import { config as FaConfig, dom as FaDom } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon as Fa } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
-
 import Header from '../Header';
-import './layout.scss';
 import { googleFont } from '../../utils/typography';
 import { config } from '../../../config';
+import './layout.scss';
 
 FaConfig.autoAddCss = false;
 

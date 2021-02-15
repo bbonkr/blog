@@ -4,7 +4,16 @@ const typography = new Typography({
     baseFontSize: '16px',
     baseLineHeight: 1.666,
     headerFontFamily: ['Nanum Gothic'],
-    bodyFontFamily: ['Noto Serif KR'],
+    bodyFontFamily: ['Nanum Gothic', 'Noto Serif KR'],
+    googleFonts: [
+        { name: 'Nanum Gothic', styles: ['Regular', 'bold', 'extra-bold'] },
+        { name: 'Nanum Gothic Coding', styles: ['Regular', 'Bold'] },
+        { name: 'Noto Serif KR', styles: ['Extra-light', 'Light', 'Regualr', 'Medium', 'Semi-bold', 'Bold', 'Black'] },
+        {
+            name: 'Raleway',
+            styles: ['Thin', 'Extra-light', 'Light', 'Regular', 'Medium', 'Semi-bold', 'Bold', 'Extra-bold', 'Black'],
+        },
+    ],
 });
 
 const googleFont = [
@@ -20,7 +29,7 @@ const googleFont = [
         name: 'Noto Serif KR',
         bold: [300, 400, 700],
     },
-    { name: 'Raleway' },
+    { name: 'Raleway', bold: [300, 400, 700] },
 ]
     .map(v => {
         if (v.bold) {

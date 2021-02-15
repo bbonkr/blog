@@ -4,7 +4,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a02674d9-dde8-433d-b41b-bf4ab0cd2046/deploy-status)](https://app.netlify.com/sites/ecstatic-ptolemy-fdde61/deploys)
 
-네트리파이에서 파일을 제공합니다. ➡️ 구성 확인중입니다.
+네트리파이에서 파일을 제공합니다.
 
 [dev.bbon.kr](https://dev.bbon.kr) 에서 확인할 수 있습니다.
 

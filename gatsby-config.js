@@ -1,5 +1,10 @@
 require('ts-node').register();
+const dotenv = require('dotenv');
 const { config } = require('./config');
+
+dotenv.config();
+
+console.info(process.env.INSTAGRAM_ACCESS_TOKEN);
 
 const { title, description, author, googleAnalytics, siteUrl } = config;
 
@@ -37,20 +42,7 @@ const gatsbyConfig = {
                 //   ],
             },
         },
-        // {
-        //     resolve: `gatsby-plugin-generate-typings`,
-        //     options: {
-        //         dest: `./@types/graphql-types.d.ts`,
-        //     },
-        //     documentPaths: ['./src/**/*.{ts,tsx}', './node_modules/gatsby-*/**/*.js'],
-        //     codegenDelay: 200,
-        //     pluckConfig: {
-        //         // this is the default config
-        //         globalGqlIdentifierName: 'graphql',
-        //         modules: [{ name: 'gatsby', identifier: 'graphql' }],
-        //     },
-        // },
-        // `gatsby-plugin-typegen`,
+
         {
             resolve: `gatsby-plugin-google-analytics`,
             options: {
@@ -69,7 +61,6 @@ const gatsbyConfig = {
                 path: `${__dirname}/_posts`,
             },
         },
-
         {
             resolve: `gatsby-transformer-remark`,
             options: {
@@ -166,7 +157,16 @@ const gatsbyConfig = {
                     },
                     `gatsby-remark-autolink-headers`,
                     `gatsby-remark-katex`,
-                    `gatsby-remark-embedder`,
+                    {
+                        resolve: `gatsby-remark-embedder`,
+                        options: {
+                            services: {
+                                Instagram: {
+                                    accessToken: process.env.INSTAGRAM_ACCESS_TOKEN,
+                                },
+                            },
+                        },
+                    },
                 ],
             },
         },

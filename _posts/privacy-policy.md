@@ -36,11 +36,11 @@ keywords:
 
 (사용자의 IP주소를 포함한) 웹사이트의 사용과 광고 형태 제공에 관한 쿠키와 웹 비콘에 의해 생성된 정보는 미국에 있는 구글 서버로 전달되어 그곳에 저장됩니다. 구글은 이 정보를 제 3자와 공유할 수 있습니다.
 
-당사는 제 3자의 구글 애드세스 광고를 가능하게 합니다. 개인정보는 제3자에게 이전될 수 있습니다(https://support.google.com/dfp_sb/answer/94149에 지정됨).
+당사는 제 3자의 구글 애드세스 광고를 가능하게 합니다. 개인정보는 제3자에게 이전될 수 있습니다([https://support.google.com/dfp_sb/answer/94149](https://support.google.com/dfp_sb/answer/94149)에 지정됨).
 
-다음 링크를 통해 관심 기반 광고를 중단할 수 있고 이를 통해 애드센스가 쿠키를 설치하는 것을 막을 수 있습니다: https://adssettings.google.com/authenticated?hl.
+다음 링크를 통해 관심 기반 광고를 중단할 수 있고 이를 통해 애드센스가 쿠키를 설치하는 것을 막을 수 있습니다: [https://adssettings.google.com/authenticated?hl](https://adssettings.google.com/authenticated?hl).
 
-추가 정보와 데이터 개인정보 보호에 관한 규정들은구글 개인정보보호규정을 참조하십시오: https://policies.google.com/technologies/ads?hl.
+추가 정보와 데이터 개인정보 보호에 관한 규정들은구글 개인정보보호규정을 참조하십시오: [https://policies.google.com/technologies/ads?hl](https://policies.google.com/technologies/ads?hl).
 
 ## 다른 웹사이트로부터 임베드된 콘텐츠
 

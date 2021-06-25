@@ -2,7 +2,7 @@
 title: kr.bbon.EntityFrameworkCore.Extensions Package
 date: 2021-01-03
 categories:
-    - Pacakge
+    - Package
 tags:
     - nuget
     - .net

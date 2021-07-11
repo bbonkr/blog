@@ -18,7 +18,6 @@ export interface CategoriesPageProps {
 }
 
 const Categories: React.FC<CategoriesPageProps> = ({ data }) => {
-    console.log(data);
     const { group } = data.allMarkdownRemark;
     const [largeCount, setLargeCount] = useState(0);
     const [targetCategory, setTargetCategory] = useState('undefined');

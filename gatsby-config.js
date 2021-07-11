@@ -4,8 +4,6 @@ const { config } = require('./config');
 
 dotenv.config();
 
-console.info(process.env.INSTAGRAM_ACCESS_TOKEN);
-
 const { title, description, author, googleAnalytics, siteUrl } = config;
 
 const gatsbyConfig = {
@@ -61,6 +59,7 @@ const gatsbyConfig = {
                 path: `${__dirname}/_posts`,
             },
         },
+
         {
             resolve: `gatsby-transformer-remark`,
             options: {
@@ -160,16 +159,48 @@ const gatsbyConfig = {
                     {
                         resolve: `gatsby-remark-embedder`,
                         options: {
+                            customTransformers: [
+                                // Your custom transformers
+                            ],
                             services: {
-                                Instagram: {
-                                    accessToken: process.env.INSTAGRAM_ACCESS_TOKEN,
-                                },
+                                // The service-specific options by the name of the service
                             },
+                        },
+                    },
+                    {
+                        resolve: 'gatsby-remark-instagram-embed',
+                        options: {
+                            width: 320,
+                            height: 320,
+                        },
+                    },
+                    `gatsby-remark-responsive-iframe`,
+                    {
+                        resolve: 'gatsby-remark-embed-gist',
+                        options: {
+                            // Optional:
+                            // the github handler whose gists are to be accessed
+                            // username: 'bbonkr',
+                            // a flag indicating whether the github default gist css should be included or not
+                            // default: true
+                            // DEPRECATED (PLEASE USE gistDefaultCssInclude)
+                            // includeDefaultCss: true,
+                            // a flag indicating whether the github default gist css should be included or not
+                            // default: true
+                            // gistDefaultCssInclude: true,
+                            // a flag indicating whether the github default gist css should be preloaded or not
+                            // use this if you want to load the default css asynchronously.
+                            // default: false
+                            // gistCssPreload: true,
+                            // a string that represents the github default gist css url.
+                            // defaults: "https://github.githubassets.com/assets/gist-embed-b3b573358bfc66d89e1e95dbf8319c09.css"
+                            // gistCssUrlAddress: '<string>',
                         },
                     },
                 ],
             },
         },
+        'gatsby-plugin-twitter',
 
         {
             resolve: `gatsby-source-filesystem`,
@@ -199,7 +230,7 @@ const gatsbyConfig = {
                 include_favicon: false,
             },
         },
-
+        'gatsby-plugin-postcss',
         `gatsby-plugin-sass`,
 
         {

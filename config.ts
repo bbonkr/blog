@@ -45,8 +45,8 @@ interface Config {
 export const config: Config = {
     /** Site MetaData (Required all)*/
     title: `<bbon />`, // (* Required)
-    status: '🌱 Start up',
-    description: `bbon Blog`, // (* Required)
+    status: '👏 Keep going',
+    description: `Software Development Blog`, // (* Required)
     author: `bbon`, // (* Required)
     siteUrl: 'http://dev.bbon.kr', // (* Required)
     // ex.'https://junhobaik.github.io'
@@ -62,7 +62,7 @@ export const config: Config = {
     name: 'Pon Cheol, Ku',
     company: '',
     location: 'Korea',
-    email: 'bbon@bbon.kr',
+    email: 'bbon@live.com',
     website: 'http://dev.bbon.kr', // ex.'https://junhobaik.github.io'
     linkedin: 'https://www.linkedin.com/in/bbonkr', // ex.'https://www.linkedin.com/in/junho-baik-16073a19ab'
     facebook: 'https://www.facebook.com/bbonkr', // ex.'https://www.facebook.com/zuck' or 'https://www.facebook.com/profile.php?id=000000000000000'
@@ -75,7 +75,7 @@ export const config: Config = {
     enableSocialShare: true, // Social share icon activation (Type of Value: Boolean. Not String)
 
     /** Optional */
-    googleAnalytics: 'UA-50182765-2', // Google Analytics TrackingID. ex.'UA-123456789-0'
+    googleAnalytics: 'G-L9LTGTDM4K', // 'UA-50182765-2', // Google Analytics TrackingID. ex.'UA-123456789-0'
     googleAdsenseSlot: '9243570675', // Google Adsense Slot. ex.'5214956675'
     googleAdsenseClient: 'ca-pub-5956253181701205', // Google Adsense Client. ex.'ca-pub-5001380215831339'
     // Please correct the adsense client number(ex.5001380215831339) in the './static/ads.txt' file.

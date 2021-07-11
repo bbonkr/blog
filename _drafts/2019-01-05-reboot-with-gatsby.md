@@ -124,22 +124,28 @@ export default Bio;
 
 https://youtu.be/b2d_0HSqBMY
 
-➡️ Work
+➡️ Working
 
 ### Twitter
 
 https://twitter.com/bbonkr/status/1209685204509560832
 
-➡️ Work
+➡️ Working
 
 ### Facebook
 
-https://www.facebook.com/photo.php?fbid=2895172780514666&set=a.344637782234858&type=3
+https://www.facebook.com/bbonkr/posts/4430960916935837
 
 ➡️ Does not work
 
 ### Instagram
 
-https://www.instagram.com/p/B3lws7IAUr-/
 
-➡️ Does not work
+![instagram](B3lws7IAUr-)
+
+➡️ Working
+
+
+### Gist
+
+`gist:bbonkr/5b1441644085d84c726d795885f35ec4`
